@@ -30,6 +30,7 @@
 ## How To Use
 
 - Clone the repository and open the index.html on a browser.
+- availabe at: [link](https://camposbg.github.io/CV-viewer-with-VueJS/)
 
 ---
 
