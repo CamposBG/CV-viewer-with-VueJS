@@ -1,4 +1,5 @@
 # Resume viewer with VueJS
+<img src="./picture-for-github/vue_project.gif">
 
 ## Description
 
