@@ -2,7 +2,7 @@
 
 ## Description
 
-- As my first vue project, I created the basic front-end of a resume viewer page;
+- As my first vue project, I created a resume viewer page (this is just the basic front end app);
 
 - By clicking on the cards (left section), it shows detailed information on the right section;
 
