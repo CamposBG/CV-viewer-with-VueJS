@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <title>First Vue project</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <img src="https://cdn.pixabay.com/photo/2015/12/08/17/40/magnifying-glass-1083378_960_720.png" alt="logo">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Vagas</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Empresas</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Curriculos</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Carreiras</a></li>
+        </ul>
+      </nav>
+      <a class="entrar-btn" href="#"><button>ENTRAR</button></a>
+    </header>
+  
+    <div class="searchArea">
+      <div class="search">
+        <input type="text" class="searchTerm" placeholder="Digite um cargo ou palavra-chave">
+        <button type="submit" class="searchButton">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div class="filter-btns">
+        <button><i class="fas fa-filter"></i> Filtrar</button>
+        <button><i class="fas fa-sort-amount-down"></i> Relevância</button>
+      </div>
+    </div>
+  
+    <div class="leftSection">
+      <div class="card" @click="selectedIndex = index" v-for="(curriculo, index) in cvs" >
+        <div class="profile-sidebar">
+          <img class="profile-img" :src="curriculo.perfilPhoto" alt="Avatar">
+          <ul class="social-list">
+            <li class="social-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+            <li class="social-item"><a href="#" class="social-link"><i class="fas fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <div class="profile-main">
+          <h2 class="profile-name">{{curriculo.name + " " + curriculo.surname}}</h2>
+          <p class="profile-position">{{curriculo.position}}</p>
+          <p class="profile-body">{{trimString(curriculo.sumary,150) + "..."}}</p>
+        </div>
+      </div>
+  
+    </div>
+    <div class="rightSection">
+      <div class="cv">
+        <div class="cv-personal-information">
+          <div class="cv-side-bar">
+            <img :src="selectedCV.perfilPhoto" class="cv-img">
+            <ul class="cv-social-list">
+              <li class="cv-social-item"><a href="#" class="cv-social-link"><i class="fab fa-linkedin"></i></a></li>
+              <li class="cv-social-item"><a href="#" class="cv-social-link"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+          </div>
+          <div class="cv-personal-info-main">
+            <h1  class="cv-name">{{selectedCV.name}} {{selectedCV.surname}} </h1>
+            <p class="cv-position">{{selectedCV.position}}</p>
+            <p class="cv-contact">Contato: {{selectedCV.contact.phone}}</p>
+            <p class="cv-email">E-mail: {{selectedCV.contact.email}}</p>
+  
+          </div>
+        </div>
+        <div class="cv-detailed">
+          <p class="apresentacao">Apresentação</p>
+          <p class="sumary">
+            {{selectedCV.sumary}}
+          </p>
+          <p class="formation">Formação</p>
+          <p class="formation-body">
+          <ul>
+            <li v-for="curso in selectedCV.formation">
+              {{curso}}
+            </li>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <footer>footer</footer>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./object.js"></script>
+  <script src="./app.js"></script>
+
+</body>
+
+</html>
