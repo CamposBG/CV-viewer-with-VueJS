@@ -14,6 +14,7 @@
 
 - HTML
 - CSS
+- Javascript
 - VueJS (version 2x)
 
 ---
