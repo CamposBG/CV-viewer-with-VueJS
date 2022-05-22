@@ -84,7 +84,7 @@ const user = [
     formation: [
       "USP - Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "UNICAMP - Proin sollicitudin risus vitae porta placerat. Cras et mauris",
-      "UNESP - sagittis, congue ante ut, bibendum mauris. Fusce eu quam vel elit dignissim posuere"
+      "UNESP - sagittis, congue ante ut, bibendum mauris. Fusce eu quam vel elit dignissim posuee"
     ]
   },
 ]
